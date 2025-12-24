@@ -15,7 +15,7 @@ public class Renew {
         if (args.length >= 2) {
             String fullFileUrl = args[0];
             String fullFilePath = args[1];
-            boolean isOpen = args.length < 3 || Boolean.parseBoolean(args[3]);
+            boolean isOpen = args.length < 3 || Boolean.parseBoolean(args[2]);
             getFileSystem().download(fullFileUrl, fullFilePath);
             if (isOpen) {
                 getComputerSystem().open(fullFilePath);
