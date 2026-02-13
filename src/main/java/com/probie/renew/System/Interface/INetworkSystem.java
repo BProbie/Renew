@@ -8,7 +8,7 @@ public interface INetworkSystem {
     void trustConnect();
 
     /**
-     * 信任SSL连接
+     * 信任 SSL 连接
      * */
     void trustSSL();
 
