@@ -141,7 +141,7 @@ public class Renew implements IRenew {
 
     @Override
     public boolean getIsOpen() {
-        return false;
+        return isOpen;
     }
 
 }

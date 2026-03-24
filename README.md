@@ -23,7 +23,7 @@ Renew是一个Java项目，提供系统相关的功能接口和实现。
 <dependency>
     <groupId>com.github.BProbie</groupId>
     <artifactId>Renew</artifactId>
-    <version>least</version>
+    <version>1.1</version>
 </dependency>
 ```
 
