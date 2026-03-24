@@ -1,11 +1,9 @@
 package com.probie.renew;
 
-import com.probie.renew.Renew.Renew;
-
 public class Main {
 
     public static void main(String[] args) {
-        Renew.getInstance().renew(args);
+        com.probie.renew.Renew.Renew.getInstance().renew(args);
     }
 
 }

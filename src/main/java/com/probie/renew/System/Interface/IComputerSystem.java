@@ -28,7 +28,7 @@ public interface IComputerSystem {
 
     /**
      * 获取当前操作系统名称
-     * Windows n
+     * Windows
      * Linux
      * Mac
      * @return 操作系统名称

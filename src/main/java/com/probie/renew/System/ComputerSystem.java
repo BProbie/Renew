@@ -10,7 +10,7 @@ public class ComputerSystem extends NetworkSystem implements IComputerSystem {
     private volatile static ComputerSystem INSTANCE;
 
     /**
-     * 获取懒加载的类单例对象
+     * 获取一个懒加载的类单例对象
      * */
     public synchronized static ComputerSystem getInstance() {
         if (INSTANCE == null) {

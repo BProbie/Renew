@@ -20,13 +20,6 @@ public interface IRenew {
     boolean renew();
 
     /**
-     * 获取懒加载的单例工具类
-     * */
-    NetworkSystem getNetworkSystem();
-    ComputerSystem getComputerSystem();
-    FileSystem getFileSystem();
-
-    /**
      * set & get
      * */
     Renew setJavaFilePath(String javaFilePath);

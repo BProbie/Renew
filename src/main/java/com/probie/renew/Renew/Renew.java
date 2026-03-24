@@ -2,11 +2,13 @@ package com.probie.renew.Renew;
 
 import java.io.File;
 import com.probie.renew.System.FileSystem;
-import com.probie.renew.System.NetworkSystem;
 import com.probie.renew.System.ComputerSystem;
 import com.probie.renew.Renew.Interface.IRenew;
 
 public class Renew implements IRenew {
+
+    private final String NAME = "RENEW";
+    private final String VERSION = "v1.0.0.0";
 
     /**
      * 维护一个懒加载的类单例对象
@@ -14,7 +16,7 @@ public class Renew implements IRenew {
     private volatile static Renew INSTANCE;
 
     /**
-     * 获取懒加载的类单例对象
+     * 获取一个懒加载的类单例对象
      * */
     public synchronized static Renew getInstance() {
         if (INSTANCE == null) {
@@ -28,6 +30,7 @@ public class Renew implements IRenew {
      * */
     public String[] help = new String[] {
             "java -jar Renew.jar help",
+            "java -jar Renew.jar version",
             "java -jar Renew.jar [FullFileUrl] [FullFilePath]",
             "java -jar Renew.jar [FullFileUrl] [FullFilePath] [IsOpen(True|False)]",
     };
@@ -37,8 +40,8 @@ public class Renew implements IRenew {
      * */
     public String javaFilePath = "java";
     public String renewFilePath = "Renew.jar";
-    public String fullFileUri = "https://github.com/BProbie/Renew/raw/refs/heads/master" + "/" + "res" + "/" + "Renew.jar";
-    public String fullFilePath = getComputerSystem().getHere() + File.separator + "Renew.exe";
+    public String fullFileUri = "https://github.com/BProbie/Renew/releases/download/v1.0.0.0/Renew.jar";
+    public String fullFilePath = ComputerSystem.getInstance().getHere() + File.separator + "Renew.jar";
     public boolean isOpen = true;
 
     @Override
@@ -47,10 +50,16 @@ public class Renew implements IRenew {
             String fullFileUri = args[0];
             String fullFilePath = args[1];
             boolean isOpen = args.length < 3 || Boolean.parseBoolean(args[2]);
-            getFileSystem().download(fullFileUri, fullFilePath);
-            if (isOpen) {
-                getComputerSystem().open(fullFilePath);
+            if (FileSystem.getInstance().download(fullFileUri, fullFilePath)) {
+                System.out.println("Renew Success");
+            } else {
+                System.out.println("Renew Failed");
             }
+            if (isOpen) {
+                ComputerSystem.getInstance().open(fullFilePath);
+            }
+        } else if (args.length == 1 && args[0].equalsIgnoreCase("version")) {
+            System.out.printf("%s-%s\n", NAME, VERSION);
         } else {
             for (String s : help) System.out.println(s);
         }
@@ -58,7 +67,7 @@ public class Renew implements IRenew {
 
     @Override
     public boolean renew() {
-        String systemName = getComputerSystem().getSystemName().toLowerCase();
+        String systemName = ComputerSystem.getInstance().getSystemName().toLowerCase();
         if (systemName.contains("windows")) {
             String command = "cmd"+ " " + "/c" + " "
                     + getJavaFilePath() + " " + "-jar" + " "
@@ -66,27 +75,12 @@ public class Renew implements IRenew {
                     + getFullFileUri() + " "
                     + getFullFilePath() + " "
                     + getIsOpen();
-            if (getComputerSystem().runCommand(command, false) != 0) {
-                return getComputerSystem().runCommand(command, true) == 0;
+            if (ComputerSystem.getInstance().runCommand(command, false) != 0) {
+                return ComputerSystem.getInstance().runCommand(command, true) == 0;
             }
             return true;
         }
         return false;
-    }
-
-    @Override
-    public NetworkSystem getNetworkSystem() {
-        return NetworkSystem.getInstance();
-    }
-
-    @Override
-    public ComputerSystem getComputerSystem() {
-        return ComputerSystem.getInstance();
-    }
-
-    @Override
-    public FileSystem getFileSystem() {
-        return FileSystem.getInstance();
     }
 
     @Override

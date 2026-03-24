@@ -12,30 +12,31 @@ public class FileSystem extends ComputerSystem implements IFileSystem {
     private volatile static FileSystem INSTANCE;
 
     /**
-     * 重写下载方法使适配加速器等网络代理模式
-     * */
-    @Override
-    public boolean download(String urlPath, String fullFilePath) {
-        try {
-            return IFileSystem.super.download(urlPath, fullFilePath);
-        } catch (URISyntaxException | IOException ignored) {
-            trustConnect();
-            try {
-                return IFileSystem.super.download(urlPath, fullFilePath);
-            } catch (URISyntaxException | IOException exception) {
-                throw new RuntimeException(exception);
-            }
-        }
-    }
-
-    /**
-     * 获取懒加载的类单例对象
+     * 获取一个懒加载的类单例对象
      * */
     public synchronized static FileSystem getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new FileSystem();
         }
         return INSTANCE;
+    }
+
+    /**
+     * 重写下载方法
+     * 使其适配网络加速的特殊环境
+     * */
+    @Override
+    public boolean download(String uriPath, String fullFilePath) {
+        try {
+            return IFileSystem.super.download(uriPath, fullFilePath);
+        } catch (URISyntaxException | IOException ignored) {
+            trustConnect();
+            try {
+                return IFileSystem.super.download(uriPath, fullFilePath);
+            } catch (URISyntaxException | IOException exception) {
+                throw new RuntimeException(exception);
+            }
+        }
     }
 
 }
