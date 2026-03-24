@@ -60,8 +60,8 @@ public class Renew implements IRenew {
     public boolean renew() {
         String systemName = getComputerSystem().getSystemName().toLowerCase();
         if (systemName.contains("windows")) {
-            String command = "cmd /c" + " "
-                    + getJavaFilePath() + "-jar" + " "
+            String command = "cmd"+ " " +"/c" + " "
+                    + getJavaFilePath() + " " + "-jar" + " "
                     + getRenewFilePath() + " "
                     + getFullFileUrl() + " "
                     + getFullFilePath() + " "
