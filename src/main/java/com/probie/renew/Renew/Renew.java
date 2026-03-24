@@ -37,17 +37,17 @@ public class Renew implements IRenew {
      * */
     public String javaFilePath = "java";
     public String renewFilePath = "Renew.jar";
-    public String fullFileUrl = "https://github.com/BProbie/Renew/raw/refs/heads/master" + "/" + "res" + "/" + "Renew.jar";
+    public String fullFileUri = "https://github.com/BProbie/Renew/raw/refs/heads/master" + "/" + "res" + "/" + "Renew.jar";
     public String fullFilePath = getComputerSystem().getHere() + File.separator + "Renew.exe";
     public boolean isOpen = true;
 
     @Override
     public void renew(String[] args) {
         if (args.length >= 2) {
-            String fullFileUrl = args[0];
+            String fullFileUri = args[0];
             String fullFilePath = args[1];
             boolean isOpen = args.length < 3 || Boolean.parseBoolean(args[2]);
-            getFileSystem().download(fullFileUrl, fullFilePath);
+            getFileSystem().download(fullFileUri, fullFilePath);
             if (isOpen) {
                 getComputerSystem().open(fullFilePath);
             }
@@ -60,10 +60,10 @@ public class Renew implements IRenew {
     public boolean renew() {
         String systemName = getComputerSystem().getSystemName().toLowerCase();
         if (systemName.contains("windows")) {
-            String command = "cmd"+ " " +"/c" + " "
+            String command = "cmd"+ " " + "/c" + " "
                     + getJavaFilePath() + " " + "-jar" + " "
                     + getRenewFilePath() + " "
-                    + getFullFileUrl() + " "
+                    + getFullFileUri() + " "
                     + getFullFilePath() + " "
                     + getIsOpen();
             if (getComputerSystem().runCommand(command, false) != 0) {
@@ -112,14 +112,14 @@ public class Renew implements IRenew {
     }
 
     @Override
-    public Renew setFullFileUrl(String fullFileUrl) {
-        this.fullFileUrl = fullFileUrl;
+    public Renew setFullFileUri(String fullFileUrl) {
+        this.fullFileUri = fullFileUrl;
         return this;
     }
 
     @Override
-    public String getFullFileUrl() {
-        return fullFileUrl;
+    public String getFullFileUri() {
+        return fullFileUri;
     }
 
     @Override

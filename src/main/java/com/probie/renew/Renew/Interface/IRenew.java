@@ -35,8 +35,8 @@ public interface IRenew {
     Renew setRenewFilePath(String renewFilePath);
     String getRenewFilePath();
 
-    Renew setFullFileUrl(String fullFileUrl);
-    String getFullFileUrl();
+    Renew setFullFileUri(String fullFileUrl);
+    String getFullFileUri();
 
     Renew setFullFilePath(String fullFilePath);
     String getFullFilePath();
