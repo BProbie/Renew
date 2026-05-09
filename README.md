@@ -1,22 +1,22 @@
 # ⭐原创开源工具
 
-### 工具名称: Renew（更新工具）
+### 工具名称：Renew（更新工具）
 
-### 工具版本: v1.0.0（稳定版）
+### 工具版本：v1.0.0（稳定版）
 
-### 开发语言: Java（JDK-21.0.8）
+### 开发语言：Java（JDK-21.0.8）
 
-### 开发时间: 2025年10月01日 ~ 至今持续更新
+### 开发时间：2025年10月01日 ~ 至今持续更新
 
-### 开源地址（Github）: https://github.com/BProbie/Renew/
+### 开源地址（Github）：https://github.com/BProbie/Renew/
 
-### 开源协议（MIT）: https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
+### 开源协议（MIT）：https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
 
-### 下载地址: https://github.com/BProbie/Renew/releases/tag/v1.0.0/
+### 下载地址：https://github.com/BProbie/Renew/releases/tag/v1.0.0/
 
-### 依赖工具: Maven
+### 依赖工具：Maven
 
-### 依赖技术: 
+### 依赖技术：
 
 - ##### JUnit（JUnit5）
 
