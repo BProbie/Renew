@@ -183,7 +183,7 @@ Renew
 │               └── probie
 │                   └── renew
 │                       └── MainTest.java
-└── target # 已在仓库中删减
+└── target # 已在仓库中删除
 ```
 
 
