@@ -1,4 +1,4 @@
-package com.probie.renew.System;
+package com.probie.renew.system;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.X509TrustManager;
@@ -6,7 +6,7 @@ import javax.net.ssl.HttpsURLConnection;
 import java.security.cert.X509Certificate;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
-import com.probie.renew.System.Interface.INetworkSystem;
+import com.probie.renew.system.api.INetworkSystem;
 
 public class NetworkSystem implements INetworkSystem, X509TrustManager {
 

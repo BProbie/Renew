@@ -2,7 +2,7 @@
 
 ### 工具名称: Renew（更新工具）
 
-### 工具版本: v1.0.0.0（稳定版）
+### 工具版本: v1.0.0（稳定版）
 
 ### 开发语言: Java（JDK-21.0.8）
 
@@ -12,7 +12,7 @@
 
 ### 开源协议：https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
 
-### 下载地址：https://github.com/BProbie/Renew/releases/tag/v1.0.0.0/
+### 下载地址：https://github.com/BProbie/Renew/releases/tag/v1.0.0/
 
 ### 依赖工具：Maven
 
@@ -27,7 +27,7 @@
 ### 下载工具文件
 
 ```shell
-https://github.com/BProbie/Renew/releases/download/v1.0.0.0/Renew.jar
+https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar
 ```
 
 
@@ -56,7 +56,7 @@ java -jar Renew.jar version
 ```
 
 ```shell
-RENEW-v1.0.0.0
+RENEW-v1.0.0
 ```
 
 ##### ③ 使用示例
@@ -138,7 +138,7 @@ System.out.println(Renew.getInstance().turnVersionToNumber(Renew.getInstance().V
 ```
 
 ```shell
-1000
+100
 ```
 
 
@@ -185,6 +185,12 @@ Renew
 ├── pom.xml
 └── README.md
 ```
+
+
+
+# ⭐技术细节
+
+### ① 实现了对网络传输过程中出现的异常问题的监控和自动修复，目前主要实现了在网络加速环境中对于SSL证书信任问题的默认信任。
 
 
 

@@ -1,8 +1,8 @@
-package com.probie.renew.System;
+package com.probie.renew.system;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import com.probie.renew.System.Interface.IFileSystem;
+import com.probie.renew.system.api.IFileSystem;
 
 public class FileSystem extends ComputerSystem implements IFileSystem {
 

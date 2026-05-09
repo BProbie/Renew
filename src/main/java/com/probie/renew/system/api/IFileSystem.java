@@ -1,4 +1,4 @@
-package com.probie.renew.System.Interface;
+package com.probie.renew.system.api;
 
 import java.net.URI;
 import java.net.URL;

@@ -1,6 +1,6 @@
-package com.probie.renew.System;
+package com.probie.renew.system;
 
-import com.probie.renew.System.Interface.IComputerSystem;
+import com.probie.renew.system.api.IComputerSystem;
 
 public class ComputerSystem extends NetworkSystem implements IComputerSystem {
 

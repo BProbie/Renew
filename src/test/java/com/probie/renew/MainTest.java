@@ -1,7 +1,7 @@
 package com.probie.renew;
 
 import org.junit.jupiter.api.Test;
-import com.probie.renew.Renew.Renew;
+import com.probie.renew.renew.Renew;
 
 public class MainTest {
 

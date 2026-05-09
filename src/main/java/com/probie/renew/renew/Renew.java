@@ -1,14 +1,14 @@
-package com.probie.renew.Renew;
+package com.probie.renew.renew;
 
 import java.io.File;
-import com.probie.renew.System.FileSystem;
-import com.probie.renew.System.ComputerSystem;
-import com.probie.renew.Renew.Interface.IRenew;
+import com.probie.renew.renew.api.IRenew;
+import com.probie.renew.system.FileSystem;
+import com.probie.renew.system.ComputerSystem;
 
 public class Renew implements IRenew {
 
     public final String NAME = "RENEW";
-    public final String VERSION = "v1.0.0.0";
+    public final String VERSION = "v1.0.0";
 
     /**
      * 维护一个懒加载的类单例对象
@@ -40,8 +40,8 @@ public class Renew implements IRenew {
      * */
     public String javaFilePath = "java";
     public String renewFilePath = "Renew.jar";
-    public String fullFileUri = "https://github.com/BProbie/Renew/releases/download/v1.0.0.0/Renew.jar";
-    public String fullFilePath = ComputerSystem.getInstance().getHere() + File.separator + "Renew.jar";
+    public String fullFileUri = "https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar";
+    public String fullFilePath = ComputerSystem.getInstance().getHere() + File.separator + fullFileUri.split("/")[fullFileUri.split("/").length - 1];
     public boolean isOpen = true;
 
     @Override

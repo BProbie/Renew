@@ -1,6 +1,6 @@
-package com.probie.renew.Renew.Interface;
+package com.probie.renew.renew.api;
 
-import com.probie.renew.Renew.Renew;
+import com.probie.renew.renew.Renew;
 
 public interface IRenew {
 
