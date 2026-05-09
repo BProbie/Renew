@@ -62,7 +62,7 @@ RENEW-v1.0.0
 ##### ③ 使用示例
 
 ```shell
-java -jar Renew.jar https://github.com/BProbie/Renew/releases/download/v1.0.0.0/Renew.jar C:\Users\probie\Desktop\Renew.jar true
+java -jar Renew.jar https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar C:\Users\probie\Desktop\Renew.jar true
 ```
 
 ```shell
@@ -112,7 +112,7 @@ Renew renew = Renew.getInstance();
 renew.setRenewFilePath(System.getProperty("user.dir") + File.separator + "Renew.jar");
 
 // 必填: 需要更新的远程文件网址
-renew.setFullFileUri("https://github.com/BProbie/Renew/releases/download/v1.0.0.0/Renew.jar");
+renew.setFullFileUri("https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar");
 
 // 必填: 需要更新到的本地文件路径
 renew.setFullFilePath("C:\\Users\\probie\\Desktop\\Renew.jar");
