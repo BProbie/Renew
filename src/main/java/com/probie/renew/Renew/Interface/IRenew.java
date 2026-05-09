@@ -1,23 +1,27 @@
 package com.probie.renew.Renew.Interface;
 
 import com.probie.renew.Renew.Renew;
-import com.probie.renew.System.FileSystem;
-import com.probie.renew.System.NetworkSystem;
-import com.probie.renew.System.ComputerSystem;
 
 public interface IRenew {
 
     /**
-     * 更新逻辑
+     * 手动更新逻辑
      * @param args main 函数中的 args 参数数组
      * */
     void renew(String[] args);
 
     /**
-     * 更新逻辑
+     * 嵌入更新逻辑
      * @return 是否更新成功
      * */
     boolean renew();
+
+    /**
+     * 将版本号转化成数值
+     * @param version 版本号
+     * @return 版本号数值
+     * */
+    int turnVersionToNumber(Object version);
 
     /**
      * set & get

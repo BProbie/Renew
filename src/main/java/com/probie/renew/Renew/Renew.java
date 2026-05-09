@@ -7,8 +7,8 @@ import com.probie.renew.Renew.Interface.IRenew;
 
 public class Renew implements IRenew {
 
-    private final String NAME = "RENEW";
-    private final String VERSION = "v1.0.0.0";
+    public final String NAME = "RENEW";
+    public final String VERSION = "v1.0.0.0";
 
     /**
      * 维护一个懒加载的类单例对象
@@ -81,6 +81,16 @@ public class Renew implements IRenew {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int turnVersionToNumber(Object version) {
+        String[] versions = String.valueOf(version).toLowerCase().replace("v", "").split("\\.");
+        int number = 0;
+        for (int i = 0; i < versions.length; i++) {
+            number += (int) (Integer.parseInt(versions[i]) * Math.pow(10, versions.length - (i + 1)));
+        }
+        return number;
     }
 
     @Override

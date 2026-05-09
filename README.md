@@ -129,6 +129,20 @@ renew.renew();
 
 
 
+# ⭐更多功能
+
+### 将版本号转成数值用于大小比较
+
+```java
+System.out.println(Renew.getInstance().turnVersionToNumber(Renew.getInstance().VERSION));
+```
+
+```shell
+1000
+```
+
+
+
 # ⭐项目结构
 
 ```markdown
