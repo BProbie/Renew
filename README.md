@@ -8,15 +8,15 @@
 
 ### 开发时间: 2025年10月01日 ~ 至今持续更新
 
-### 开源地址: https://github.com/BProbie/Renew/
+### 开源地址（Github）: https://github.com/BProbie/Renew/
 
-### 开源协议：https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
+### 开源协议（MIT）: https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
 
-### 下载地址：https://github.com/BProbie/Renew/releases/tag/v1.0.0/
+### 下载地址: https://github.com/BProbie/Renew/releases/tag/v1.0.0/
 
-### 依赖工具：Maven
+### 依赖工具: Maven
 
-### 依赖技术：
+### 依赖技术: 
 
 - ##### JUnit（JUnit5）
 
@@ -147,43 +147,43 @@ System.out.println(Renew.getInstance().turnVersionToNumber(Renew.getInstance().V
 
 ```markdown
 Renew
-├── .github/
-├── .idea/ # 已在仓库中删减
-├── .mvn/ # 已在仓库中删除
-├── out/ # 已在仓库中删除
-├── target/ # 已在仓库中删除
-├── src/
-│  ├── main/
-│  │  ├── java/
-│  │  │  └── com/
-│  │  │     └── probie/
-│  │  │        └── renew/
-│  │  │           ├── Main.java
-│  │  │           ├── Renew/
-│  │  │           │  ├── Renew.java
-│  │  │           │  └── Interface/
-│  │  │           │     └── IRenew.java
-│  │  │           └── System/
-│  │  │              ├── ComputerSystem.java
-│  │  │              ├── FileSystem.java
-│  │  │              ├── NetworkSystem.java
-│  │  │              └── Interface/
-│  │  │                 ├── IComputerSystem.java
-│  │  │                 ├── IFileSystem.java
-│  │  │                 └── INetworkSystem.java
-│  │  └── resources/
-│  │     └── META-INF/
-│  │        └── MANIFEST.MF
-│  └── test/
-│     └── java/
-│        └── com/
-│           └── probie/
-│              └── renew/
-│                 └── MainTest.java
+├── .github
 ├── .gitignore
+├── .idea # 已在仓库中删减
+├── .mvn # 已在仓库中删除
 ├── LICENSE
+├── out # 已在仓库中删除
 ├── pom.xml
-└── README.md
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── probie
+│   │   │           └── renew
+│   │   │               ├── Main.java
+│   │   │               ├── renew
+│   │   │               │   ├── api
+│   │   │               │   │   └── IRenew.java
+│   │   │               │   └── Renew.java
+│   │   │               └── system
+│   │   │                   ├── api
+│   │   │                   │   ├── IComputerSystem.java
+│   │   │                   │   ├── IFileSystem.java
+│   │   │                   │   └── INetworkSystem.java
+│   │   │                   ├── ComputerSystem.java
+│   │   │                   ├── FileSystem.java
+│   │   │                   └── NetworkSystem.java
+│   │   └── resources
+│   │       └── META-INF
+│   │           └── MANIFEST.MF
+│   └── test
+│       └── java
+│           └── com
+│               └── probie
+│                   └── renew
+│                       └── MainTest.java
+└── target
 ```
 
 
