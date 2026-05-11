@@ -2,7 +2,7 @@
 
 ### 工具名称：Renew（更新工具）
 
-### 工具版本：v1.0.0（稳定版）
+### 工具版本：v1.1.0（稳定版）
 
 ### 开发语言：Java（JDK-21.0.8）
 
@@ -12,7 +12,7 @@
 
 ### 开源协议（MIT）：https://github.com/BProbie/Renew/raw/refs/heads/master/LICENSE/
 
-### 下载地址：https://github.com/BProbie/Renew/releases/tag/v1.0.0/
+### 下载地址：https://github.com/BProbie/Renew/releases/tag/1.1.0/
 
 ### 依赖工具：Maven
 
@@ -22,12 +22,18 @@
 
 
 
+# ⭐工具简介
+
+### 基于Java环境，手动及嵌入两用，兼容鲁棒性网络环境，的更新工具
+
+
+
 # ⭐快速开始
 
 ### 下载工具文件
 
 ```shell
-https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar
+https://github.com/BProbie/Renew/releases/download/1.1.0/Renew.jar
 ```
 
 
@@ -56,13 +62,13 @@ java -jar Renew.jar version
 ```
 
 ```shell
-RENEW-v1.0.0
+RENEW-v1.1.0
 ```
 
 ##### ③ 使用示例
 
 ```shell
-java -jar Renew.jar https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar C:\Users\probie\Desktop\Renew.jar true
+java -jar Renew.jar https://github.com/BProbie/Renew/releases/download/1.1.0/Renew.jar C:\Users\probie\Desktop\Renew.jar true
 ```
 
 ```shell
@@ -105,23 +111,26 @@ Download Success
 #####  ③ 使用示例
 
 ```java
-// 实例化更新工具对象
-Renew renew = Renew.getInstance();
-
-// 必填: Renew更新工具的本地文件路径
-renew.setRenewFilePath(System.getProperty("user.dir") + File.separator + "Renew.jar");
-
-// 必填: 需要更新的远程文件网址
-renew.setFullFileUri("https://github.com/BProbie/Renew/releases/download/v1.0.0/Renew.jar");
-
-// 必填: 需要更新到的本地文件路径
-renew.setFullFilePath("C:\\Users\\probie\\Desktop\\Renew.jar");
-
-// 可选: 更新完成后是否自动打开文件
-renew.setIsOpen(true);
-
-// 可选: 用于使用指定Java目录下的Java环境
-renew.setJavaFilePath("java");
+// 实例化更新工具对象(建造者模式)
+Renew renew = Renew
+    
+    // 必填 远程文件网址
+    .builder("https://github.com/BProbie/Renew/releases/download/1.1.0/Renew.jar")
+    
+    // 选填 用于指定Java目录以使用特定的Java环境(默认为环境变量中定义的Java环境)
+    .javaFilePath("java")
+    
+    // 选填 用于指定Renew.jar更新工具的本地路径(默认为当前目录下的Renew.jar) 
+    .renewFilePath(ComputerSystem.getInstance().getHere() + File.separator + "Renew.jar") 
+    
+    // 选填 用于指定文件下载的本地路径(默认为当前目录加上远程文件网站的最后一小段字符串)
+    .fullFilePath(ComputerSystem.getInstance().getHere() + File.separator + "Renew.jar") 
+    
+     // 选填 用于设置更新完成后是否自动启动更新完成后的程序(默认为启用)
+    .isOpen(true)
+    
+    // 构建实例化更新工具对象
+    .build();
 
 // 执行更新
 renew.renew();
@@ -138,8 +147,32 @@ System.out.println(Renew.getInstance().turnVersionToNumber(Renew.getInstance().V
 ```
 
 ```shell
-100
+1001000
 ```
+
+##### 仅适用于规范版本号，例va.b.c（即段数不大于3，且每小段的值不大于等于1k）
+
+
+
+### 版本号大小比较方法
+
+```java
+System.out.println(Renew.getInstance().compareVersionWithSmallerVersion(Renew.getInstance().VERSION, "v1.0.0"));
+```
+
+```shell
+true
+```
+
+```java
+System.out.println(Renew.getInstance().compareVersionWithBiggerVersion(Renew.getInstance().VERSION, "v1.0.0"));
+```
+
+```shell
+false
+```
+
+##### 适用于几乎所有格式的版本号
 
 
 

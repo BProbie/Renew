@@ -15,4 +15,14 @@ public class MainTest {
         System.out.println(Renew.getInstance().turnVersionToNumber(Renew.getInstance().VERSION));
     }
 
+    @Test
+    void compareVersionWithSmallerVersion() {
+        System.out.println(Renew.getInstance().compareVersionWithSmallerVersion(Renew.getInstance().VERSION, "v1.0.0"));
+    }
+
+    @Test
+    void compareVersionWithBiggerVersion() {
+        System.out.println(Renew.getInstance().compareVersionWithBiggerVersion(Renew.getInstance().VERSION, "v1.0.0"));
+    }
+
 }

@@ -24,6 +24,23 @@ public interface IRenew {
     int turnVersionToNumber(Object version);
 
     /**
+     * 比较版本号大小
+     * @param version 版本号
+     * @param smallerVersion 小版本号
+     * @return 小版本号是否比版本号小
+     * */
+    boolean compareVersionWithSmallerVersion(Object version, Object smallerVersion);
+
+    /**
+     * 比较版本号大小
+     * @param version 版本号
+     * @param biggerVersion 大版本号
+     * @return 大版本号是否比版本号大
+     * */
+    boolean compareVersionWithBiggerVersion(Object version, Object biggerVersion);
+
+
+    /**
      * set & get
      * */
     Renew setJavaFilePath(String javaFilePath);
