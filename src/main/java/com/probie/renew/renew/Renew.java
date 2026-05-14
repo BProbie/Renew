@@ -11,7 +11,7 @@ public class Renew implements IRenew {
      * 工具信息
      * */
     public final String NAME = "RENEW";
-    public final String VERSION = "v1.1.0";
+    public final String VERSION = "1.1.0";
 
     /**
      * 维护一个懒加载的类单例对象
