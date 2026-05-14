@@ -18,7 +18,7 @@
 
 ### 依赖技术：
 
-- ##### JUnit（JUnit5）
+- ##### JUnit（JUnit 5）
 
 
 
